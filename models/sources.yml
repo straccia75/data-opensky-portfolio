@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: opensky
+    database: "{{ env_var('DBT_GCP_PROJECT', target.project) }}"
+    schema: opensky_lakehouse
+    tables:
+      - name: bronze_telemetria
+        description: "Tabla externa con el JSON crudo particionado por fecha"
